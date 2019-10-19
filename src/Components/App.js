@@ -1,26 +1,52 @@
 import React from 'react';
-import logo from '../Assets/logo.svg';
-import '../Assets/App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
+import Home from './Home';
+import HomeApp from './HomeApp';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component {
+
+  componentDidMount() {
+    window.$(document).ready(function () {
+      window.$('.sidenav').sidenav();
+    });
+  }
+
+  closeSideNav() {
+    window.$('.sidenav').sidenav('close')
+  }
+
+  render() {
+    return (
+      <Router>
+        <div>
+          <nav className="indigo">
+            <div className="nav-wrapper">
+              <a className="brand-logo">DigiGames</a>
+              <a data-target="mobile-demo" className="sidenav-trigger" style={{cursor: "pointer"}}><i className="material-icons">menu</i></a>
+              <ul id="nav-mobile" className="right hide-on-med-and-down">
+                <li><a href="sass.html">Sass</a></li>
+              </ul>
+            </div>
+          </nav>
+
+          <ul className="sidenav" id="mobile-demo">
+            <li><Link to="/homeapp" onClick={this.closeSideNav}>HomeApp</Link></li>
+            <li><Link to="/home" onClick={this.closeSideNav}>Home</Link></li>
+          </ul>
+
+          {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+          <Switch>
+            <Route path="/homeapp" component={HomeApp} />
+            <Route path="/home" component={Home} />
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
-
-export default App;
