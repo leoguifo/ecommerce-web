@@ -1,33 +1,18 @@
 import React from 'react';
+import VerticalCenter from './VerticalCenter';
+import HorizontalCenter from './HorizontalCenter'
 
 export default class FullCenter extends React.Component {
+
+    // this.props.height: string css
+    // this.props.hover: true or false
     render() {
         return (
-            <div style={styles.outer}>
-                <div style={styles.middle}>
-                    <div style={styles.inner}>
-                        {this.props.children}
-                    </div>
-                </div>
-            </div>
+            <VerticalCenter style={this.props.style} hover={this.props.hover} height={this.props.height}>
+                <HorizontalCenter>
+                    {this.props.children}
+                </HorizontalCenter>
+            </VerticalCenter>
         );
-    }
-}
-
-const styles = {
-    outer: {
-        display: "table",
-        position: "absolute",
-        height: "100%",
-        width: "100%"
-    },
-    middle: {
-        display: "table-cell",
-        verticalAlign: "middle"
-    },
-    inner: {
-        marginLeft: "auto",
-        marginRight: "auto",
-        width: "fit-content"
     }
 }
