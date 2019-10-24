@@ -22,7 +22,7 @@ const styles = {
         left: "0",
         height: "100%",
         width: "100%",
-        zIndex:"10000"
+        zIndex:"0"
     },
     middle: {
         display: "table-cell",
