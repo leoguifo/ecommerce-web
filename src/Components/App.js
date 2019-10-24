@@ -26,10 +26,10 @@ export default class App extends React.Component {
         <div>
           <nav className="indigo">
             <div className="nav-wrapper">
-              <a className="brand-logo">DigiGames</a>
-              <a data-target="mobile-demo" className="sidenav-trigger" style={{cursor: "pointer"}}><i className="material-icons">menu</i></a>
+              <Link to="/" className="brand-logo" style={styles.logoNav}> <i className="material-icons">cloud</i> DigiGames</Link>
+              <a data-target="mobile-demo" className="sidenav-trigger" style={{ cursor: "pointer" }}><i className="material-icons">menu</i></a>
               <ul id="nav-mobile" className="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
+                <li><a href="sass.html"></a></li>
               </ul>
             </div>
           </nav>
@@ -48,5 +48,12 @@ export default class App extends React.Component {
         </div>
       </Router>
     );
+  }
+}
+
+const styles = {
+  logoNav: {
+    marginLeft: "15px",
+    fontSize: "20px"
   }
 }
