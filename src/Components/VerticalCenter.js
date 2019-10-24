@@ -5,7 +5,7 @@ export default class VerticalCenter extends React.Component {
         return (
             <div style={styles.outer}>
                 <div style={styles.middle}>
-                    teste
+                    {this.props.children}
                 </div>
             </div>
         );
@@ -16,11 +16,8 @@ const styles = {
     outer: {
         display: "table",
         position: "absolute",
-        top: "0",
-        left: "0",
         height: "100%",
-        width: "100%",
-        zIndex:"10000"
+        width: "100%"
     },
     middle: {
         display: "table-cell",

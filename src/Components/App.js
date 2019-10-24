@@ -6,7 +6,7 @@ import {
   Link,
 } from "react-router-dom";
 import Home from './Home';
-import HomeApp from './HomeApp';
+import Teste from './Teste';
 
 export default class App extends React.Component {
 
@@ -24,7 +24,7 @@ export default class App extends React.Component {
     return (
       <Router>
         <div>
-          <nav className="indigo">
+          <nav className="indigo" style={{zIndex: "2"}}>
             <div className="nav-wrapper">
               <Link to="/" className="brand-logo" style={styles.logoNav}> <i className="material-icons">cloud</i> DigiGames</Link>
               <a data-target="mobile-demo" className="sidenav-trigger" style={{ cursor: "pointer" }}><i className="material-icons">menu</i></a>
@@ -35,15 +35,14 @@ export default class App extends React.Component {
           </nav>
 
           <ul className="sidenav" id="mobile-demo">
-            <li><Link to="/homeapp" onClick={this.closeSideNav}>HomeApp</Link></li>
-            <li><Link to="/home" onClick={this.closeSideNav}>Home</Link></li>
+            <li><Link to="/teste" onClick={this.closeSideNav}>Teste</Link></li>
           </ul>
 
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
           <Switch>
-            <Route path="/homeapp" component={HomeApp} />
-            <Route path="/home" component={Home} />
+            <Route path="/teste" component={Teste} />
+            <Route path="/" component={Home} />
           </Switch>
         </div>
       </Router>
@@ -53,7 +52,6 @@ export default class App extends React.Component {
 
 const styles = {
   logoNav: {
-    marginLeft: "15px",
     fontSize: "20px"
   }
 }

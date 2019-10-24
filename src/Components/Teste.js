@@ -1,6 +1,6 @@
 import React from 'react';
 
-function HomeApp() {
+function Teste() {
     return (
         <div className="App">
             <header className="App-header">
@@ -20,4 +20,4 @@ function HomeApp() {
     );
 }
 
-export default HomeApp;
+export default Teste;
