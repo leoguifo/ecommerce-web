@@ -1,11 +1,11 @@
 import React from 'react';
-import OverBlockLoader from './OverBlockLoader';
+import CardProdutoHome from './CardProdutoHome';
 
 export default class Home extends React.Component {
 
     render() {
         return (
-            <OverBlockLoader />
+            <CardProdutoHome />
         )
     }
 }
