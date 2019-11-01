@@ -8,6 +8,7 @@ import {
 import Home from './Home';
 import Teste from './Teste';
 import MyAccount from './MyAccount';
+import Cart from './Cart';
 
 export default class App extends React.Component {
 
@@ -27,8 +28,8 @@ export default class App extends React.Component {
         <div>
           <nav className="indigo" style={{zIndex: "2"}}>
             <div className="nav-wrapper">
-              <Link to="/" className="brand-logo" style={styles.logoNav}> <i className="material-icons">cloud</i> DigiGames</Link>
-              <a data-target="mobile-demo" className="sidenav-trigger" style={{ cursor: "pointer" }}><i className="material-icons">menu</i></a>
+              <a data-target="mobile-demo" className="sidenav-trigger" style={{ cursor: "pointer", display: "block" }}><i className="material-icons">menu</i></a>
+              <Link to="/" className="brand-logo center" style={styles.logoNav}> <i className="material-icons">cloud</i> DigiGames</Link>
               <ul id="nav-mobile" className="right hide-on-med-and-down">
                 <li><a href="sass.html"></a></li>
               </ul>
@@ -38,6 +39,7 @@ export default class App extends React.Component {
           <ul className="sidenav" id="mobile-demo">
             <li><Link to="/teste" onClick={this.closeSideNav}>Teste</Link></li>
             <li><Link to="/MyAccount" onClick={this.closeSideNav}>Minha Conta</Link></li>
+            <li><Link to="/Cart" onClick={this.closeSideNav}>Cart</Link></li>
           </ul>
 
           {/* A <Switch> looks through its children <Route>s and
@@ -45,6 +47,7 @@ export default class App extends React.Component {
           <Switch>
             <Route path="/teste" component={Teste} />
             <Route path="/MyAccount" component={MyAccount} />
+            <Route path="/Cart" component={Cart} />
             <Route path="/" component={Home} />
             
           </Switch>
