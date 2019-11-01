@@ -6,7 +6,7 @@ export default class OverBlockLoader extends React.Component {
     render() {
         return (
             <FullCenter style={styles.background} hover={true}>
-                <Loader size="big" />
+            <Loader size="big" />
             </FullCenter>
         );
     }

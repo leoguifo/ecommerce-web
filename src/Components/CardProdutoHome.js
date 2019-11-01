@@ -5,10 +5,10 @@ export default class CardProdutoHome extends React.Component {
         return (
             <div class="row">
                 <div class="col s12 m7">
-                    <div class="card small" style={styles.cardSize}>
+                    <div class="card small">
                         <div class="card-image">
                             <img src="https://materializecss.com/images/sample-1.jpg" />
-                            <span class="card-title">Card Title</span>
+                            <span class="card-title">{this.props.produto.nome}</span>
                         </div>
                         <div class="card-content">
                             <p>I am a very simple card. I am good at containing small bits of information.
@@ -21,10 +21,5 @@ export default class CardProdutoHome extends React.Component {
                 </div>
             </div>
         )
-    }
-}
-
-const styles = {
-    cardSize: {
     }
 }
