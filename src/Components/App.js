@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Home from './Home';
 import Teste from './Teste';
+import MyAccount from './MyAccount';
 
 export default class App extends React.Component {
 
@@ -36,13 +37,16 @@ export default class App extends React.Component {
 
           <ul className="sidenav" id="mobile-demo">
             <li><Link to="/teste" onClick={this.closeSideNav}>Teste</Link></li>
+            <li><Link to="/MyAccount" onClick={this.closeSideNav}>Minha Conta</Link></li>
           </ul>
 
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
           <Switch>
             <Route path="/teste" component={Teste} />
+            <Route path="/MyAccount" component={MyAccount} />
             <Route path="/" component={Home} />
+            
           </Switch>
         </div>
       </Router>
