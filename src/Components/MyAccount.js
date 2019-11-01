@@ -5,6 +5,7 @@ import AddIcon from '@material-ui/icons/Add';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@material-ui/core/Button';
+import {Link} from "react-router-dom";
 
 export default class MyAccount extends React.Component {
 
@@ -82,7 +83,7 @@ export default class MyAccount extends React.Component {
                 <div className="col s12 m8 center">
                     <div className="card-panel grey lighten-5 z-depth-3" style={styles.user}>
                         <div style={styles.collection}>
-                            <a class="waves-effect btn-small navigation in-post w-100" style={styles.btt}>Voltar</a>
+                            <Link class="waves-effect btn-small navigation in-post w-100" style={styles.btt} to="/Home">Voltar</Link>
                         </div>
                     </div>
                 </div>
@@ -114,9 +115,10 @@ const styles = {
     },
     btt: {
         width: '100%',
+        color: 'white',
     },
     iten: {
         display: 'flex',
         justifyContent: 'space-evenly',
-    }
+    },
 }
