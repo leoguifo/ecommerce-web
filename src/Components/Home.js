@@ -1,8 +1,7 @@
 import React from 'react';
 import CardProdutoHome from './CardProdutoHome';
 import { connect } from 'react-redux';
-import { teste } from '../reduxStore/actions';
-import Utils from '../Utils/Utils';
+import Utils from '../Utils';
 
 
 class Home extends React.Component {
@@ -28,5 +27,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
     mapStateToProps,
-    Utils.bindMapDispatchToProps({ teste })
+    Utils.bindMapDispatchToProps({ })
 )(Home)

@@ -30,9 +30,6 @@ export default class App extends React.Component {
             <div className="nav-wrapper">
               <a data-target="mobile-demo" className="sidenav-trigger" style={{ cursor: "pointer", display: "block" }}><i className="material-icons">menu</i></a>
               <Link to="/" className="brand-logo center" style={styles.logoNav}> <i className="material-icons">cloud</i> DigiGames</Link>
-              <ul id="nav-mobile" className="right hide-on-med-and-down">
-                <li><a href="sass.html"></a></li>
-              </ul>
             </div>
           </nav>
 

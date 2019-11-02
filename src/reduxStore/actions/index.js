@@ -1,8 +1,10 @@
-import { TESTE } from './actionTypes';
+import { ADD_ITEM_TO_CART } from './actionTypes';
+import Utils from '../../Utils';
 
-export const teste = value => {
+export const addItemToCart = value => {
+    Utils.toast('Item adicionado ao carrinho');
     return ({
-        type: TESTE,
-        page: value
+        type: ADD_ITEM_TO_CART,
+        value: value
     })
 };
