@@ -5,7 +5,7 @@ import AddIcon from '@material-ui/icons/Add';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@material-ui/core/Button';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default class MyAccount extends React.Component {
 
@@ -33,12 +33,12 @@ export default class MyAccount extends React.Component {
                                 <li className="collection">
                                     <a style={styles.fonts}>
                                         usuario@hotmail.com
-                                </a>
+                                    </a>
                                 </li>
                                 <li className="collection">
                                     <a style={styles.fonts}>
                                         *********
-                                </a>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
