@@ -5,7 +5,7 @@ const initialState = {
         sku: "321",
         nome: "Teste",
         descricao: "Produto é assim, assim e assado",
-        preco: "10",
+        preco: 10,
         imagem: "https://materializecss.com/images/sample-1.jpg"
     },]
 };
@@ -18,7 +18,7 @@ export const produtoReducer = (state = initialState, action) => {
                     $set: action.value
                 }
             });
+        default:
+            return state;
     }
-
-    return state;
 };

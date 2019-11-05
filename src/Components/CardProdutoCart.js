@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Utils from '../Utils';
-import { addItemToCart } from '../reduxStore/actions'
+import { removeCartItem } from '../reduxStore/actions'
 
-class CardProdutoHome extends React.Component {
+class CardProdutoCart extends React.Component {
     render() {
         return (
             <div className="row">
@@ -18,7 +18,7 @@ class CardProdutoHome extends React.Component {
           I am convenient because I require little markup to use effectively.</p>
                         </div>
                         <div className="card-action">
-                            <a href="#" style={{ cursor: "pointer" }} onClick={() => this.props.addItemToCart(this.props.produto)} >Adicionar ao carrinho</a>
+                            <a href="#" style={{ cursor: "pointer" }} onClick={() => this.props.removeCartItem(this.props.key)} >Remover do carrinho</a>
                         </div>
                     </div>
                 </div>
@@ -31,5 +31,5 @@ const mapStateToProps = (state) => (null);
 
 export default connect(
     null,
-    Utils.bindMapDispatchToProps({ addItemToCart })
-)(CardProdutoHome)
+    Utils.bindMapDispatchToProps({ removeCartItem })
+)(CardProdutoCart)
