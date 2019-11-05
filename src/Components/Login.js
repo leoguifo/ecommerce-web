@@ -14,6 +14,20 @@ export default class Login extends React.Component {
                                 DIGIGAMES
                             </p>
                         </div>
+                        <div className="col s8 center margin-5">
+                            <p>
+                                Aqui ficará a imagem
+                            </p>
+                        </div>
+                        <div className =" col s8 center">
+                            <form>
+                            <label>
+                                Nome:
+                                <input type="text" name="name" />
+                            </label>
+                            <input type="submit" value="Enviar" />
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

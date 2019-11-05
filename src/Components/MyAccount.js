@@ -83,7 +83,7 @@ export default class MyAccount extends React.Component {
                 <div className="col s12 m8 center">
                     <div className="card-panel grey lighten-5 z-depth-3" style={styles.user}>
                         <div style={styles.collection}>
-                            <Link class="waves-effect btn-small navigation in-post w-100" style={styles.btt} to="/Home">Voltar</Link>
+                            <Link class="waves-effect btn-small navigation in-post w-100 mb-2" style={styles.btt} to="/Home">Voltar</Link>
                         </div>
                     </div>
                 </div>
