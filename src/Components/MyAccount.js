@@ -31,12 +31,12 @@ export default class MyAccount extends React.Component {
                                 <li className="collection">
                                     <a style={styles.fonts}>
                                         usuario@hotmail.com
-                                </a>
+                                    </a>
                                 </li>
                                 <li className="collection">
                                     <a style={styles.fonts}>
                                         *********
-                                </a>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
