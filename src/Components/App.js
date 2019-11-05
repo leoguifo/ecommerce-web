@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,8 +10,9 @@ import Home from './Home';
 import Teste from './Teste';
 import MyAccount from './MyAccount';
 import Cart from './Cart';
+import Utils from '../Utils';
 
-export default class App extends React.Component {
+class App extends React.Component {
 
   componentDidMount() {
     window.$(document).ready(function () {
@@ -36,7 +38,7 @@ export default class App extends React.Component {
           <ul className="sidenav" id="mobile-demo">
             <li><Link to="/teste" onClick={this.closeSideNav}>Teste</Link></li>
             <li><Link to="/MyAccount" onClick={this.closeSideNav}>Minha Conta</Link></li>
-            <li><Link to="/Cart" onClick={this.closeSideNav}>Cart</Link></li>
+            <li><Link to="/Cart" onClick={this.closeSideNav}>Cart ({this.props.itensOnCart})</Link></li>
           </ul>
 
           {/* A <Switch> looks through its children <Route>s and
@@ -59,3 +61,12 @@ const styles = {
     fontSize: "20px"
   }
 }
+
+const mapStateToProps = (state) => ({
+    itensOnCart: state.cartState.itensCounter
+});
+
+export default connect(
+    mapStateToProps,
+    Utils.bindMapDispatchToProps({ })
+)(App)

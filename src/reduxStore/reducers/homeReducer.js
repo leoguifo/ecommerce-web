@@ -11,7 +11,7 @@ export const homeReducer = (state = initialState, action) => {
                     $set: action.value
                 }
             });
+        default:
+            return state;
     }
-
-    return state;
 };
