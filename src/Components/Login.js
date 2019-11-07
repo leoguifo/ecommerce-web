@@ -27,7 +27,7 @@ export default class Login extends React.Component {
                             <label>
                                 <input placeholder="Senha" type="password" name="password" />
                             </label>
-                            <input class="waves-effect waves-light btn" type="submit" value="Enviar" />
+                            <input className="waves-effect waves-light btn" type="submit" value="Enviar" />
                             </form>
                             <div>
                                 <a className="center" style={styles.bot}>

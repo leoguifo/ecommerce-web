@@ -7,7 +7,7 @@ class CardProdutoHome extends React.Component {
     render() {
         return (
             <div style={styles.cardFlex}>
-                <div className="card small" style={styles.card}>
+                <div className="card small grey lighten-3" style={styles.card}>
                 <div className="card-image">
                     <img alt="" src={this.props.produto.imagem} style={styles.image} />
                     <span className="card-title" style={styles.cardTitle}>{this.props.produto.nome}</span>
@@ -17,10 +17,11 @@ class CardProdutoHome extends React.Component {
                         R$ {this.props.produto.preco}
                     </div>
                     <div>
-                        <i class="material-icons grey-text">desktop_windows</i>
+                        <i className="material-icons grey-text">desktop_windows</i>
+                        <i className="material-icons grey-text">videogame_asset</i>
                     </div>
                     <div style={styles.addCart} onClick={() => this.props.addItemToCart(this.props.produto)} >
-                        <i class="material-icons">add_shopping_cart</i>
+                        <i className="material-icons">add_shopping_cart</i>
                     </div>
                 </div>
             </div>
@@ -41,7 +42,8 @@ const styles = {
     card: {
         width: "145px",
         height: "180px",
-        margin: "5px"
+        margin: "5px",
+        padding: "5px"
     },
     cardTitle: {
         fontSize: "15px"

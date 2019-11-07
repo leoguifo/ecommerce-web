@@ -15,7 +15,6 @@ export const produtoReducer = (state = initialState, action) => {
                 }
             });
         case SET_LOADED_PRODUTOS:
-            console.log(action.produtos)
             return update(state, {
                 produtos: {
                     $set: action.produtos.map((item) => {
