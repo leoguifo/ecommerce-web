@@ -22,11 +22,18 @@ export default class Login extends React.Component {
                         <div className =" col s8 center">
                             <form>
                             <label>
-                                Nome:
-                                <input type="text" name="name" />
+                                <input placeholder="E-mail" type="text" name="name" />
                             </label>
-                            <input type="submit" value="Enviar" />
+                            <label>
+                                <input placeholder="Senha" type="password" name="password" />
+                            </label>
+                            <input class="waves-effect waves-light btn" type="submit" value="Enviar" />
                             </form>
+                            <div>
+                                <a className="center" style={styles.bot}>
+                                    Cadastro
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -49,5 +56,7 @@ const styles = {
         height: '480px',
         verticalAlign: 'center',
     },
-
+    bot:{
+        marginTop: '2rem',
+    },
 }
