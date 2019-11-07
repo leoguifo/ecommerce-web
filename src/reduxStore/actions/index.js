@@ -18,13 +18,7 @@ export const loadProdutos = () => {
             .then((res) => {
                 let produtos = [];
                 res.forEach((doc) => {
-                    produtos.push({
-                        id: doc.id,
-                        nome: doc.data().nome,
-                        sku: doc.data().sku,
-                        quantidade: doc.data().quantidade,
-                        preco: doc.data().preco
-                    });
+                    produtos.push( doc.data() );
                 });
                 dispatch({
                     type: SET_LOADED_PRODUTOS,

@@ -20,7 +20,8 @@ export const produtoReducer = (state = initialState, action) => {
                 produtos: {
                     $set: action.produtos.map((item) => {
                         return {
-                            ...item
+                            ...item,
+                            imagem: "https://materializecss.com/images/sample-1.jpg"
                         };
                     })
                 }

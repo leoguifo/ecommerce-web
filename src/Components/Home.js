@@ -13,25 +13,37 @@ class Home extends React.Component {
     }
 
     render() {
+
+        if (this.props.onLoad) return (
+            <div className="progress">
+                <div className="indeterminate"></div>
+            </div>
+        );
+
         return (
-            <>
+            <div className="row" style={styles.homeRow}>
                 {
-                    this.props.onLoad ?
-                        <div class="progress">
-                            <div class="indeterminate"></div>
-                        </div>
-                        :
-                        this.props.produtos.map((item, key) => {
-                            return (
-                                <CardProdutoHome
-                                    key={key}
-                                    produto={item}
-                                />
-                            );
-                        })
+                    this.props.produtos.map((item, key) => {
+                        return (
+                            <CardProdutoHome
+                                key={key}
+                                produto={item}
+                            />
+                        );
+                    })
                 }
-            </>
+            </ div>
         )
+    }
+}
+
+const styles = {
+    homeRow: {
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "space-around",
+        flex: "1",
+        padding: "10px"
     }
 }
 

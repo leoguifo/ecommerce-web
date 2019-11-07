@@ -36,6 +36,7 @@ class App extends React.Component {
           </nav>
 
           <ul className="sidenav" id="mobile-demo">
+            <li><Link to="/" onClick={this.closeSideNav}>Inicio</Link></li>
             <li><Link to="/teste" onClick={this.closeSideNav}>Teste</Link></li>
             <li><Link to="/MyAccount" onClick={this.closeSideNav}>Minha Conta</Link></li>
             <li><Link to="/Cart" onClick={this.closeSideNav}>Cart ({this.props.itensOnCart})</Link></li>
