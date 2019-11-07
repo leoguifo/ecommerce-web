@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Utils from '../Utils';
-import { addItemToCart, loadProdutos } from '../reduxStore/actions'
-import { StylesContext } from '@material-ui/styles/StylesProvider';
+import { addItemToCart } from '../reduxStore/actions'
 
 class CardProdutoHome extends React.Component {
     render() {
@@ -70,8 +69,6 @@ const styles = {
         bottom: "5px"
     }
 }
-
-const mapStateToProps = (state) => (null);
 
 export default connect(
     null,
