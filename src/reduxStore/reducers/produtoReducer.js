@@ -1,21 +1,31 @@
+import { SET_LOADED_PRODUTOS, ON_LOAD_PRODUTOS } from '../actions/actionTypes';
 import update from 'immutability-helper';
 
 const initialState = {
-    produtos: [{
-        sku: "321",
-        nome: "Teste",
-        descricao: "Produto é assim, assim e assado",
-        preco: 10,
-        imagem: "https://materializecss.com/images/sample-1.jpg"
-    },]
+    produtos: [],
+    onLoad: true
 };
 
 export const produtoReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "TESTE":
+        case ON_LOAD_PRODUTOS:
             return update(state, {
-                page: {
+                onLoad: {
                     $set: action.value
+                }
+            });
+        case SET_LOADED_PRODUTOS:
+            return update(state, {
+                produtos: {
+                    $set: action.produtos.map((item) => {
+                        return {
+                            sku: item.sku,
+                            nome: item.nome,
+                            descricao: "Sem descrição",
+                            preco: item.preco,
+                            imagem: "https://materializecss.com/images/sample-1.jpg"
+                        };
+                    })
                 }
             });
         default:
