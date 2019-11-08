@@ -9,6 +9,7 @@ import {
 import Home from './Home';
 import Teste from './Teste';
 import MyAccount from './MyAccount';
+import Login from './Login';
 import Cart from './Cart';
 import Utils from '../Utils';
 
@@ -38,6 +39,7 @@ class App extends React.Component {
           <ul className="sidenav" id="mobile-demo">
             <li><Link to="/" onClick={this.closeSideNav}>Inicio</Link></li>
             <li><Link to="/teste" onClick={this.closeSideNav}>Teste</Link></li>
+            <li><Link to="/Login" onClick={this.closeSideNav}>Login</Link></li>
             <li><Link to="/MyAccount" onClick={this.closeSideNav}>Minha Conta</Link></li>
             <li><Link to="/Cart" onClick={this.closeSideNav}>Cart ({this.props.itensOnCart})</Link></li>
           </ul>
@@ -47,6 +49,7 @@ class App extends React.Component {
           <Switch>
             <Route path="/teste" component={Teste} />
             <Route path="/MyAccount" component={MyAccount} />
+            <Route path="/Login" component={Login} />
             <Route path="/Cart" component={Cart} />
             <Route path="/" component={Home} />
             
