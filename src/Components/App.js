@@ -12,6 +12,7 @@ import MyAccount from './MyAccount';
 import Login from './Login';
 import Cart from './Cart';
 import Utils from '../Utils';
+import Register from './Register';
 
 class App extends React.Component {
 
@@ -40,6 +41,7 @@ class App extends React.Component {
             <li><Link to="/" onClick={this.closeSideNav}>Inicio</Link></li>
             <li><Link to="/teste" onClick={this.closeSideNav}>Teste</Link></li>
             <li><Link to="/Login" onClick={this.closeSideNav}>Login</Link></li>
+            <li><Link to="/Register" onClick={this.closeSideNav}>Register</Link></li>
             <li><Link to="/MyAccount" onClick={this.closeSideNav}>Minha Conta</Link></li>
             <li><Link to="/Cart" onClick={this.closeSideNav}>Cart ({this.props.itensOnCart})</Link></li>
           </ul>
@@ -49,10 +51,10 @@ class App extends React.Component {
           <Switch>
             <Route path="/teste" component={Teste} />
             <Route path="/MyAccount" component={MyAccount} />
+            <Route path="/Register" component={Register} />
             <Route path="/Login" component={Login} />
             <Route path="/Cart" component={Cart} />
             <Route path="/" component={Home} />
-            
           </Switch>
         </div>
       </Router>

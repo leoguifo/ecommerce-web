@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Login extends React.Component {
+export default class Register extends React.Component {
 
     render() {
         return (
@@ -14,24 +14,24 @@ export default class Login extends React.Component {
                             <form>
                             <div style={styles.prin} >
                                 <label>
-                                    Usuário:
+                                    Nome:
                                     <input type="text" name="name" />
                                 </label>
                                 <label>
                                     Senha:
-                                    <input type="text" name="name" />
+                                    <input type="password" name="password" />
                                 </label>
                                 <label>
                                     Confirme a Senha:
-                                    <input type="text" name="name" />
+                                    <input type="password" name="confirm" />
                                 </label>
                                 <label>
                                     E-mail:
-                                    <input type="text" name="name" />
+                                    <input type="text" name="email" />
                                 </label>
                             </div>
-                            <div className="center">
-                                <input type="submit" value="Enviar" />
+                            <div className="center" style={{marginTop:'1rem'}}>
+                            <input className="waves-effect waves-light btn" type="submit" value="Enviar" href="/Login" />
                             </div>
                             </form>
                         </div>

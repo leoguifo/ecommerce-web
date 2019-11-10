@@ -1,5 +1,9 @@
 import React from 'react';
 import FullCenter from './FullCenter';
+import Register from './Register';
+import {
+  Link,
+} from "react-router-dom";
 
 
 export default class Login extends React.Component {
@@ -30,8 +34,8 @@ export default class Login extends React.Component {
                             <input className="waves-effect waves-light btn" type="submit" value="Enviar" />
                             </form>
                             <div>
-                                <a className="center" style={styles.bot}>
-                                    Cadastro
+                                <a href="/Register">
+                                    Cadastrar-se
                                 </a>
                             </div>
                         </div>
