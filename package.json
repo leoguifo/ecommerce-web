@@ -7,20 +7,20 @@
     "@material-ui/icons": "^4.5.1",
     "firebase": "^7.2.3",
     "immutability-helper": "^3.0.1",
+    "jest": "^24.9.0",
     "material-ui-icons": "^1.0.0-beta.36",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.1.2",
-    "react-slick": "^0.25.2",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -37,5 +37,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "verbose": true
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-jest": "^24.9.0"
   }
 }

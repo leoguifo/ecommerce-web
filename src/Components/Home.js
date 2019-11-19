@@ -3,14 +3,19 @@ import CardProdutoHome from './CardProdutoHome';
 import { connect } from 'react-redux';
 import { loadProdutos, setLoadProduto } from '../reduxStore/actions';
 import Utils from '../Utils';
-import Slider from "react-slick";
-
 
 class Home extends React.Component {
 
     componentDidMount() {
         this.props.setLoadProduto(true);
-        this.props.loadProdutos()
+        this.props.loadProdutos();
+    }
+
+    initCarousel = () => {
+        window.$('.carousel').carousel({
+            fullWidth: true,
+            indicators: true
+        })
     }
 
     render() {
@@ -23,6 +28,20 @@ class Home extends React.Component {
 
         return (
             <>
+                <div style={styles.topSlider}>
+                    <div className="carousel carousel-slider" style={styles.slider} onLoad={this.initCarousel}>
+                        {
+                            this.props.produtos.slice(0, 5).map((item, key) => {
+                                return (
+                                    <a className="carousel-item" key={key} style={styles.sliderA}>
+                                        <img alt="" src={item.imagem} style={styles.sliderImg} />
+                                    </a>
+                                );
+                            })
+                        }
+                    </div>
+                </div>
+
                 <div className="row" style={styles.homeRow}>
                     {
                         this.props.produtos.map((item, key) => {
@@ -35,42 +54,11 @@ class Home extends React.Component {
                         })
                     }
                 </div>
-                <div>
-                    <h2> Single Item</h2>
-                    <Slider {...slideSettings}>
-                        <div>
-                            <h3>1</h3>
-                        </div>
-                        <div>
-                            <h3>2</h3>
-                        </div>
-                        <div>
-                            <h3>3</h3>
-                        </div>
-                        <div>
-                            <h3>4</h3>
-                        </div>
-                        <div>
-                            <h3>5</h3>
-                        </div>
-                        <div>
-                            <h3>6</h3>
-                        </div>
-                    </Slider>
-                </div>
 
             </>
         )
     }
 }
-
-const slideSettings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-};
 
 const styles = {
     homeRow: {
@@ -79,6 +67,22 @@ const styles = {
         justifyContent: "space-around",
         flex: "1",
         padding: "10px"
+    },
+    topSlider: {
+        padding: "10px"
+    },
+    slider: {
+        height: "250px"
+    },
+    sliderA: {
+        backgroundColor: "red",
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column"
+    },
+    sliderImg: {
+        height: "inherit",
+        objectFit: "cover"
     }
 }
 
