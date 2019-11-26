@@ -13,6 +13,7 @@ import Login from './Login';
 import Cart from './Cart';
 import Utils from '../Utils';
 import Register from './Register';
+import Categories from './Categories';
 
 class App extends React.Component {
 
@@ -40,6 +41,7 @@ class App extends React.Component {
           <ul className="sidenav" id="mobile-demo">
             <li><Link to="/" onClick={this.closeSideNav}>Inicio</Link></li>
             <li><Link to="/teste" onClick={this.closeSideNav}>Teste</Link></li>
+            <li><Link to="/Categories" onClick={this.closeSideNav}>Categories</Link></li>
             <li><Link to="/Login" onClick={this.closeSideNav}>Login</Link></li>
             <li><Link to="/Register" onClick={this.closeSideNav}>Register</Link></li>
             <li><Link to="/MyAccount" onClick={this.closeSideNav}>Minha Conta</Link></li>
@@ -50,6 +52,7 @@ class App extends React.Component {
             renders the first one that matches the current URL. */}
           <Switch>
             <Route path="/teste" component={Teste} />
+            <Route path="/Categories" component={Categories} />
             <Route path="/MyAccount" component={MyAccount} />
             <Route path="/Register" component={Register} />
             <Route path="/Login" component={Login} />
