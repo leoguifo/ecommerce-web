@@ -8,16 +8,15 @@ class CardProdutoCart extends React.Component {
         return (
             <div className="row">
                 <div className="col s12 m7">
-                    <div className="card small">
-                        <div className="card-image">
-                            <img alt="" src="https://materializecss.com/images/sample-1.jpg" />
+                    <div className="card small grey darken-3">
+                        <div className="card-image white-text">
+                            <img alt="" src={this.props.produto.imagem} />
                             <span className="card-title">{this.props.produto.nome}</span>
                         </div>
-                        <div className="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+                        <div className="card-content white-text">
+                            <p>{this.props.produto.descricao}</p>t
                         </div>
-                        <div className="card-action">
+                        <div className="card-action white-text">
                             <a href="#" style={{ cursor: "pointer" }} onClick={() => this.props.removeCartItem(this.props.key)} >Remover do carrinho</a>
                         </div>
                     </div>

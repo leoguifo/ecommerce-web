@@ -49,6 +49,7 @@ class Home extends React.Component {
                                 <CardProdutoHome
                                     key={key}
                                     produto={item}
+                                    id={item.sku}
                                 />
                             );
                         })

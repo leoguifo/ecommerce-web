@@ -1,4 +1,4 @@
-import { UPDATE_CART, ADD_ITEM_TO_CART, REMOVE_CART_ITEM, SET_LOADED_PRODUTOS, ON_LOAD_PRODUTOS } from './actionTypes';
+import { UPDATE_CART, ADD_ITEM_TO_CART, REMOVE_CART_ITEM, SET_LOADED_PRODUTOS, ON_LOAD_PRODUTOS, ON_LOGIN } from './actionTypes';
 import Utils from '../../Utils';
 import firebase from '../../Firebase';
 
@@ -18,7 +18,7 @@ export const loadProdutos = () => {
             .then((res) => {
                 let produtos = [];
                 res.forEach((doc) => {
-                    produtos.push( doc.data() );
+                    produtos.push(doc.data());
                 });
                 dispatch({
                     type: SET_LOADED_PRODUTOS,
@@ -67,3 +67,44 @@ export const removeCartItem = keyItem => {
         dispatch(updateCart());
     }
 };
+
+export const registerLogin = credentials => {
+
+    return (dispatch) => {
+
+        firebase.auth().createUserWithEmailAndPassword(credentials.email, credentials.password).catch(function (error) {
+            // Handle Errors here.
+            if (!error) {
+                dispatch(onLogin(credentials));
+            } else {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+            }
+            // ...
+        });
+
+    }
+}
+
+export const onLogin = credentials => {
+    return (dispatch) => {
+
+        firebase.auth().signInWithEmailAndPassword(credentials.email, credentials.password).catch(function(error) {
+            // Handle Errors here.
+            if (!error) {
+                dispatch(({
+                    type: ON_LOGIN,
+                    value: true
+                }))
+            } else {
+                dispatch(({
+                    type: ON_LOGIN,
+                    value: false
+                }))
+                var errorCode = error.code;
+                var errorMessage = error.message;
+            }
+            // ...
+          });
+    }
+}
