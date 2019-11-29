@@ -13,7 +13,6 @@ class CardProdutoHome extends React.Component {
 
     componentDidMount() {
         window.$('#' + this.modalKey).modal();
-        console.log(this.props.produto)
     }
 
     render() {

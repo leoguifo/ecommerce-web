@@ -18,18 +18,18 @@ class Register extends React.Component {
                                 <div style={styles.prin} >
                                     <label>
                                         E-mail:
-                                    <input id="emailR" type="text" name="email" class="white-text" />
+                                    <input id="emailR" type="text" name="email" className="white-text" />
                                     </label>
                                     <label>
                                         Senha:
-                                    <input id="passR" type="password" name="password" class="white-text" />
+                                    <input id="passR" type="password" name="password" className="white-text" />
                                     </label>
                                 </div>
                                 <div className="center" style={{ marginTop: '1rem' }}>
                                     <input className="waves-effect waves-light btn" value="Enviar" onClick={ () => this.props.registerLogin({ email: window.$("emailR").val(), password: window.$("passR").val() }) } />
                                 </div>
                             </form>
-                            <p class="red-text"><b>{this.props.loginError}</b></p>
+                            <p className="red-text"><b>{this.props.loginError}</b></p>
                         </div>
                     </div>
                 </div>

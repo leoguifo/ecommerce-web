@@ -40,7 +40,6 @@ class App extends React.Component {
 
           <ul className="sidenav" id="mobile-demo">
             <li><Link to="/" onClick={this.closeSideNav}>Inicio</Link></li>
-            <li><Link to="/teste" onClick={this.closeSideNav}>Teste</Link></li>
             <li><Link to="/Categories" onClick={this.closeSideNav}>Categories</Link></li>
             <li><Link to="/Login" onClick={this.closeSideNav}>Login</Link></li>
             <li><Link to="/Register" onClick={this.closeSideNav}>Register</Link></li>
