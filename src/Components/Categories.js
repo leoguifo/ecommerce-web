@@ -8,10 +8,16 @@ export default class Categories extends React.Component {
         return (
             <div className="col s12 ">
                 <div className="col-sm-12 col-lg-6 offset-l3">
-                    <ul className="w3-ul">
-                        <li>Ação</li>
-                        <li>Aventura</li>
-                        <li>RPG</li>
+                    <ul class="w3-border w3-ul center" >
+                        <li type="button" style={styles.cat}>Ação</li>
+                        <li type="button" style={styles.cat}>Aventura</li>
+                        <li type="button" style={styles.cat}>RPG</li>
+                        <li type="button" style={styles.cat}>Ação</li>
+                        <li type="button" style={styles.cat}>Aventura</li>
+                        <li type="button" style={styles.cat}>RPG</li>
+                        <li type="button" style={styles.cat}>Ação</li>
+                        <li type="button" style={styles.cat}>Aventura</li>
+                        <li type="button" style={styles.cat}>RPG</li>
                     </ul>
                 </div>
             </div>
@@ -19,4 +25,9 @@ export default class Categories extends React.Component {
     }
 }
 const styles = {
+    cat:{
+        margin: '5px',
+        borderStyle: 'ridge',
+
+    },
 }
