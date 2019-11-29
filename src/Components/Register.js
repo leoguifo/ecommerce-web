@@ -1,6 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import Utils from '../Utils';
+import { registerLogin } from '../reduxStore/actions'
 
-export default class Register extends React.Component {
+class Register extends React.Component {
 
     render() {
         return (
@@ -26,6 +29,7 @@ export default class Register extends React.Component {
                                     <input className="waves-effect waves-light btn" value="Enviar" onClick={ () => this.props.registerLogin({ email: window.$("emailR").val(), password: window.$("passR").val() }) } />
                                 </div>
                             </form>
+                            <p class="red-text"><b>{this.props.loginError}</b></p>
                         </div>
                     </div>
                 </div>
@@ -47,7 +51,7 @@ const styles = {
     top: {
         marginTop: '12px',
         padding: '15px',
-        height: '480px',
+        height: '300px',
         verticalAlign: 'center',
     },
     prin: {
@@ -56,3 +60,12 @@ const styles = {
     },
 
 }
+
+const mapStateToProps = (state) => ({
+    ...state.loginState
+});
+
+export default connect(
+    mapStateToProps,
+    Utils.bindMapDispatchToProps({ registerLogin })
+)(Register)

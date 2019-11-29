@@ -34,22 +34,22 @@ class CardProdutoHome extends React.Component {
                                 <i className="material-icons grey-text">videogame_asset</i>
                             </div>
                             <div style={styles.addCart}>
-                                <a class="waves-effect waves-light modal-trigger" href={"#" + this.modalKey}><i className="material-icons">add_shopping_cart</i></a>
+                                <a className="waves-effect waves-light modal-trigger" href={"#" + this.modalKey}><i className="material-icons">add_shopping_cart</i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id={this.modalKey} class="modal grey darken-3">
-                    <div class="modal-content white-text">
+                <div id={this.modalKey} className="modal grey darken-3">
+                    <div className="modal-content white-text">
                         <img alt="" src={this.props.produto.imagem} width="100%"/>
                         <h4>{this.props.produto.nome}</h4>
                         <p><b>Descrição: </b>{this.props.produto.descricao}</p>
                         <p><b>Preço: </b>R$ {this.props.produto.preco}</p>
                         <p><b>Plataformas: </b>Windows / Xbox</p>
                     </div>
-                    <div class="modal-footer grey darken-4">
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text">Fechar</a>
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text" onClick={() => this.props.addItemToCart(this.props.produto)}>Adicionar</a>
+                    <div className="modal-footer grey darken-4">
+                        <a href="#!" className="modal-close waves-effect waves-green btn-flat white-text">Fechar</a>
+                        <a href="#!" className="modal-close waves-effect waves-green btn-flat white-text" onClick={() => this.props.addItemToCart(this.props.produto)}>Adicionar</a>
                     </div>
                 </div>
             </>
