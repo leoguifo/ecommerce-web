@@ -18,6 +18,11 @@ class Home extends React.Component {
         })
     }
 
+    filterItensByCategory = item => {
+        if (!this.props.categoria) return item;
+        if (item.categoria === this.props.categoria) return item;
+    }
+
     render() {
 
         if (this.props.onLoad) return (
@@ -31,28 +36,32 @@ class Home extends React.Component {
                 <div style={styles.topSlider}>
                     <div className="carousel carousel-slider" style={styles.slider} onLoad={this.initCarousel}>
                         {
-                            this.props.produtos.slice(0, 5).map((item, key) => {
-                                return (
-                                    <a className="carousel-item" key={key} style={styles.sliderA}>
-                                        <img alt="" src={item.imagem} style={styles.sliderImg} />
-                                    </a>
-                                );
-                            })
+                            this.props.produtos.slice(0, 5)
+                                .filter(this.filterItensByCategory)
+                                .map((item, key) => {
+                                    return (
+                                        <a className="carousel-item" key={key} style={styles.sliderA}>
+                                            <img alt="" src={item.imagem} style={styles.sliderImg} />
+                                        </a>
+                                    );
+                                })
                         }
                     </div>
                 </div>
 
                 <div className="row" style={styles.homeRow}>
                     {
-                        this.props.produtos.map((item, key) => {
-                            return (
-                                <CardProdutoHome
-                                    key={key}
-                                    produto={item}
-                                    id={item.sku}
-                                />
-                            );
-                        })
+                        this.props.produtos
+                            .filter(this.filterItensByCategory)
+                            .map((item, key) => {
+                                return (
+                                    <CardProdutoHome
+                                        key={key}
+                                        produto={item}
+                                        id={item.sku}
+                                    />
+                                );
+                            })
                     }
                 </div>
 

@@ -11,7 +11,7 @@ class Categories extends React.Component {
         return (
             <div className="col s12 ">
                 <div className="col-sm-12 col-lg-6 offset-l3">
-                    <ul class="w3-border w3-ul " style={styles.ul} >
+                    <ul className="w3-border w3-ul " style={styles.ul} >
                         <Link to="/" className="waves-effect waves-light btn-small grey darken-2" type="button" style={styles.cat} onClick={ (e) => this.props.setCategory("ação") }> Ação </Link>
                         <Link to="/" className="waves-effect waves-light btn-small grey darken-2" type="button" style={styles.cat} onClick={ (e) => this.props.setCategory("ação") }>Aventura</Link>
                         <Link to="/" className="waves-effect waves-light btn-small grey darken-2" type="button" style={styles.cat} onClick={ (e) => this.props.setCategory("ação") }>RPG</Link>
