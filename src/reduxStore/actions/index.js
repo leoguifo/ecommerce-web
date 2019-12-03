@@ -1,4 +1,4 @@
-import { UPDATE_CART, ADD_ITEM_TO_CART, REMOVE_CART_ITEM, SET_LOADED_PRODUTOS, ON_LOAD_PRODUTOS, ON_LOGIN } from './actionTypes';
+import { UPDATE_CART, ADD_ITEM_TO_CART, REMOVE_CART_ITEM, SET_LOADED_PRODUTOS, ON_LOAD_PRODUTOS, ON_LOGIN, SET_CATEGORY } from './actionTypes';
 import Utils from '../../Utils';
 import firebase from '../../Firebase';
 
@@ -72,8 +72,6 @@ export const registerLogin = credentials => {
 
     return (dispatch) => {
 
-        console.log(firebase.auth)
-return
         firebase.auth().createUserWithEmailAndPassword(credentials.email, credentials.password).catch(function (error) {
             // Handle Errors here.
             if (!error) {
@@ -127,4 +125,11 @@ export const onLogin = credentials => {
             // ...
         });
     }
+}
+
+export const setCategory = value => {
+    return({
+        type: SET_CATEGORY,
+        value
+    })
 }
