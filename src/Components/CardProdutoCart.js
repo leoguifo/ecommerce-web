@@ -14,7 +14,7 @@ class CardProdutoCart extends React.Component {
                             <span className="card-title">{this.props.produto.nome}</span>
                         </div>
                         <div className="card-content white-text">
-                            <p>{this.props.produto.descricao}</p>t
+                            <p>{this.props.produto.descricao}</p>
                         </div>
                         <div className="card-action white-text">
                             <a href="#" style={{ cursor: "pointer" }} onClick={() => this.props.removeCartItem(this.props.key)} >Remover do carrinho</a>

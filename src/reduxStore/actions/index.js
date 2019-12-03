@@ -72,6 +72,8 @@ export const registerLogin = credentials => {
 
     return (dispatch) => {
 
+        console.log(firebase.auth)
+return
         firebase.auth().createUserWithEmailAndPassword(credentials.email, credentials.password).catch(function (error) {
             // Handle Errors here.
             if (!error) {
@@ -79,6 +81,14 @@ export const registerLogin = credentials => {
             } else {
                 var errorCode = error.code;
                 var errorMessage = error.message;
+
+                if (errorCode == 'auth/weak-password') {
+                    alert('The password is too weak.');
+                } else {
+                    alert(errorMessage);
+                }
+
+                console.log(error);
             }
             // ...
         });
@@ -89,7 +99,7 @@ export const registerLogin = credentials => {
 export const onLogin = credentials => {
     return (dispatch) => {
 
-        firebase.auth().signInWithEmailAndPassword(credentials.email, credentials.password).catch(function(error) {
+        firebase.auth().signInWithEmailAndPassword(credentials.email, credentials.password).catch(function (error) {
             // Handle Errors here.
             if (!error) {
                 dispatch(({
@@ -97,14 +107,24 @@ export const onLogin = credentials => {
                     value: true
                 }))
             } else {
-                dispatch(({
-                    type: ON_LOGIN,
-                    value: false
-                }))
+
                 var errorCode = error.code;
                 var errorMessage = error.message;
+
+                dispatch(({
+                    type: ON_LOGIN,
+                    value: false,
+                    error: errorMessage
+                }))
+
+                if (errorCode === 'auth/wrong-password') {
+                    alert('Wrong password.');
+                } else {
+                    alert(errorMessage);
+                }
+                console.log(error);
             }
             // ...
-          });
+        });
     }
 }
