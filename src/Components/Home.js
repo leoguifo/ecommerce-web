@@ -67,23 +67,25 @@ const styles = {
         flexWrap: "wrap",
         justifyContent: "space-around",
         flex: "1",
-        padding: "10px"
+        padding: "10px",
     },
     topSlider: {
-        padding: "10px"
+        padding: "10px",
     },
     slider: {
-        height: "250px"
+        height: "250px",
+        borderRadius: "10px"
     },
     sliderA: {
         backgroundColor: "red",
         display: "flex",
         justifyContent: "center",
-        flexDirection: "column"
+        flexDirection: "column",
     },
     sliderImg: {
         height: "inherit",
-        objectFit: "cover"
+        objectFit: "cover",
+        height: "300px"
     }
 }
 
