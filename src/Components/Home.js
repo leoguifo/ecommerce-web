@@ -77,15 +77,13 @@ const styles = {
         borderRadius: "10px"
     },
     sliderA: {
-        backgroundColor: "red",
         display: "flex",
         justifyContent: "center",
         flexDirection: "column",
     },
     sliderImg: {
         height: "inherit",
-        objectFit: "cover",
-        height: "300px"
+        objectFit: "cover"
     }
 }
 
