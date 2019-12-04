@@ -18,7 +18,7 @@ class Categories extends React.Component {
                     <ul class="w3-border w3-ul " style={styles.ul} >
                         {this.props.categorias.map((categoria) => {
                             return (
-                                <Link to="/" className="waves-effect waves-light btn-small grey darken-3" style={styles.cat} onClick={() => this.props.setCategory(categoria)}>{categoria}</Link>
+                                <Link to="/" className="waves-effect waves-light btn-small" style={styles.cat} onClick={() => this.props.setCategory(categoria)}>{categoria}</Link>
                             );
                         })}
                     </ul>
