@@ -42,9 +42,18 @@ const styles = {
         backgroundColor: 'black',
         height: '45px',
         borderRadius: '12px',
+        paddingTop: '5px',
+        paddingBottom: '5px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     ul: {
         textAlign: '-webkit-center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
     },
     ula: {
         textAlign: '-webkit-center',
