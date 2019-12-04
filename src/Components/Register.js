@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Utils from '../Utils';
 import { registerLogin } from '../reduxStore/actions'
+import {Link} from "react-router-dom";
 
 class Register extends React.Component {
 
@@ -25,9 +26,9 @@ class Register extends React.Component {
                                     <input id="passR" type="password" name="password" className="white-text" />
                                     </label>
                                 </div>
-                                <div className="center" style={{ marginTop: '1rem' }}>
-                                    <input className="waves-effect waves-light btn" value="Enviar" onClick={ () => this.props.registerLogin({ email: window.$("emailR").val(), password: window.$("passR").val() }) } />
-                                </div>
+                                <div style={styles.ula}>
+                                    <Link className="waves-effect waves-light btn-small " value="Enviar" onClick={ () => this.props.registerLogin({ email: window.$("emailR").val(), password: window.$("passR").val() }) } style={styles.cat} to="/Login">Enviar</Link>
+                                 </div>
                             </form>
                             <p className="red-text"><b>{this.props.loginError}</b></p>
                         </div>
@@ -57,6 +58,17 @@ const styles = {
     prin: {
         width: '100%',
 
+    },
+    cat:{
+        margin: '2px',
+        width: '95%',
+        backgroundColor: 'black',
+        height: '45px',
+        borderRadius: '12px',
+    },
+    ula:{
+        textAlign: '-webkit-center',
+        marginBottom: 36,
     },
 
 }
