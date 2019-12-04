@@ -4,6 +4,7 @@ import update from 'immutability-helper';
 const initialState = {
     produtos: [],
     onLoad: true,
+    categorias: [],
     categoria: ""
 };
 
@@ -15,22 +16,25 @@ export const produtoReducer = (state = initialState, action) => {
                     $set: action.value
                 }
             });
-            case SET_LOADED_PRODUTOS:
-                return update(state, {
-                    produtos: {
-                        $set: action.produtos.map((item) => {
-                            return {
-                                ...item
-                            };
-                        })
-                    }
-                });
-                case SET_CATEGORY:
-                    return update(state, {
-                        categoria: {
-                            $set: action.value
-                        }
-                    });
+        case SET_LOADED_PRODUTOS:
+            return update(state, {
+                produtos: {
+                    $set: action.produtos,
+                },
+                categorias: {
+                    $set: action.produtos.map((item) => {
+                        return item.categoria;
+                    }).filter((cat, index, self) => {
+                        return self.indexOf(cat) === index;
+                    })
+                }
+            });
+        case SET_CATEGORY:
+            return update(state, {
+                categoria: {
+                    $set: action.value
+                }
+            });
         default:
             return state;
     }
