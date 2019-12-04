@@ -102,6 +102,7 @@ const styles = {
         margin: 'auto',
         marginTop: '1.5rem',
         padding: '10px',
+        backgroundColor: '#3f51b5',
     },
     collection: {
         margin: '5px',
@@ -114,6 +115,8 @@ const styles = {
     btt: {
         width: '100%',
         color: 'white',
+        backgroundColor: '#3f51b5',
+        borderRadius: '12px',
     },
     iten: {
         display: 'flex',
