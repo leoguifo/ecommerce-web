@@ -1,9 +1,10 @@
-import { SET_LOADED_PRODUTOS, ON_LOAD_PRODUTOS } from '../actions/actionTypes';
+import { SET_LOADED_PRODUTOS, ON_LOAD_PRODUTOS, SET_CATEGORY } from '../actions/actionTypes';
 import update from 'immutability-helper';
 
 const initialState = {
     produtos: [],
-    onLoad: true
+    onLoad: true,
+    categoria: ""
 };
 
 export const produtoReducer = (state = initialState, action) => {
@@ -14,16 +15,22 @@ export const produtoReducer = (state = initialState, action) => {
                     $set: action.value
                 }
             });
-        case SET_LOADED_PRODUTOS:
-            return update(state, {
-                produtos: {
-                    $set: action.produtos.map((item) => {
-                        return {
-                            ...item
-                        };
-                    })
-                }
-            });
+            case SET_LOADED_PRODUTOS:
+                return update(state, {
+                    produtos: {
+                        $set: action.produtos.map((item) => {
+                            return {
+                                ...item
+                            };
+                        })
+                    }
+                });
+                case SET_CATEGORY:
+                    return update(state, {
+                        categoria: {
+                            $set: action.value
+                        }
+                    });
         default:
             return state;
     }

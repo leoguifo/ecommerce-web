@@ -34,7 +34,7 @@ class App extends React.Component {
           <nav className="indigo" style={{zIndex: "2"}}>
             <div className="nav-wrapper">
               <a data-target="mobile-demo" className="sidenav-trigger" style={{ cursor: "pointer", display: "block" }}><i className="material-icons">menu</i></a>
-              <Link to="/" className="brand-logo center" style={styles.logoNav}> <i className="material-icons">cloud</i> DigiGames</Link>
+              <a href="/" className="brand-logo center" style={styles.logoNav}> <i className="material-icons">cloud</i> DigiGames</a>
             </div>
           </nav>
 
