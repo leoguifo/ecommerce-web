@@ -20,8 +20,8 @@ export default class Categories extends React.Component {
                         <li className="waves-effect waves-light btn-small"  style={styles.cat}>Aventura</li>
                         <li className="waves-effect waves-light btn-small"  style={styles.cat}>RPG</li>
                     </ul>
-                    <div style={styles.ula}>
-                    <Link className="waves-effect waves-light btn-small " style={styles.cat} to="/Home">Voltar</Link>
+                    <div style={styles.ul}>
+                        <Link className="waves-effect waves-light btn-small " style={styles.cat} to="/Home">Voltar</Link>
                     </div>
                 </div>
             </div>
@@ -30,14 +30,22 @@ export default class Categories extends React.Component {
 }
 const styles = {
     cat:{
-        margin: '2px',
-        width: '95%',
-        backgroundColor: 'black',
-        height: '45px',
+        marginBottom: '5px',
+        width: '75%',
+        backgroundColor: '#3f51b5',
         borderRadius: '12px',
+        paddingTop: '5px',
+        paddingBottom: '5px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     ul:{
         textAlign: '-webkit-center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
     },
     ula:{
         textAlign: '-webkit-center',
