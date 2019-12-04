@@ -8,7 +8,7 @@ export default class Categories extends React.Component {
     render() {
         return (
             <div className="col s12 ">
-                <div className="col-sm-12 col-lg-6 offset-l3">
+                <div className="col-sm-12 col-lg-6 offset-l3" style={styles.grid}>
                     <ul class="w3-border w3-ul " style={styles.ul} >
                         <li className="waves-effect waves-light btn-small"  style={styles.cat}>Ação</li>
                         <li className="waves-effect waves-light btn-small"  style={styles.cat}>Aventura</li>
@@ -20,7 +20,7 @@ export default class Categories extends React.Component {
                         <li className="waves-effect waves-light btn-small"  style={styles.cat}>Aventura</li>
                         <li className="waves-effect waves-light btn-small"  style={styles.cat}>RPG</li>
                     </ul>
-                    <div style={styles.ul}>
+                    <div style={styles.ula}>
                         <Link className="waves-effect waves-light btn-small " style={styles.cat} to="/Home">Voltar</Link>
                     </div>
                 </div>
@@ -29,8 +29,12 @@ export default class Categories extends React.Component {
     }
 }
 const styles = {
+    grid: {
+        minHeight: 'calc(100vh - 56px)',
+        display: 'flex',
+        flexDirection: 'column'
+    },
     cat:{
-        marginBottom: '5px',
         width: '75%',
         backgroundColor: '#3f51b5',
         borderRadius: '12px',
@@ -39,16 +43,22 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        justifySelf: 'center'
     },
     ul:{
-        textAlign: '-webkit-center',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
+        flex: '1',
+        justifyContent: 'space-evenly'
     },
     ula:{
-        textAlign: '-webkit-center',
-        marginBottom: 36,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        flex: '1',
+        paddingBottom: '15px'
     },
 }
