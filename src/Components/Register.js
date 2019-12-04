@@ -62,7 +62,7 @@ const styles = {
     cat:{
         margin: '2px',
         width: '95%',
-        backgroundColor: 'black',
+        backgroundColor: '#3f51b5',
         height: '45px',
         borderRadius: '12px',
     },
