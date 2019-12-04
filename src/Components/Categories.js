@@ -2,9 +2,14 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import Utils from '../Utils';
+import { loadProdutos, setCategory } from '../reduxStore/actions';
 
 
 class Categories extends React.Component {
+
+    componentDidMount() {
+        this.props.loadProdutos();
+    }
 
     render() {
         return (
@@ -13,22 +18,10 @@ class Categories extends React.Component {
                     <ul class="w3-border w3-ul " style={styles.ul} >
                         {this.props.categorias.map((categoria) => {
                             return (
-                                <li className="waves-effect waves-light btn-small" style={styles.cat}>{categoria}</li>
+                                <Link to="/" className="waves-effect waves-light btn-small grey darken-3" style={styles.cat} onClick={() => this.props.setCategory(categoria)}>{categoria}</Link>
                             );
                         })}
-
-                        <li className="waves-effect waves-light btn-small" style={styles.cat}>Aventura</li>
-                        <li className="waves-effect waves-light btn-small" style={styles.cat}>RPG</li>
-                        <li className="waves-effect waves-light btn-small" style={styles.cat}>Ação</li>
-                        <li className="waves-effect waves-light btn-small" style={styles.cat}>Aventura</li>
-                        <li className="waves-effect waves-light btn-small" style={styles.cat}>RPG</li>
-                        <li className="waves-effect waves-light btn-small" style={styles.cat}>Ação</li>
-                        <li className="waves-effect waves-light btn-small" style={styles.cat}>Aventura</li>
-                        <li className="waves-effect waves-light btn-small" style={styles.cat}>RPG</li>
                     </ul>
-                    <div style={styles.ula}>
-                        <Link className="waves-effect waves-light btn-small " style={styles.cat} to="/Home">Voltar</Link>
-                    </div>
                 </div>
             </div>
         )
@@ -37,9 +30,8 @@ class Categories extends React.Component {
 
 const styles = {
     cat: {
-        margin: '2px',
+        marginBottom: '10px',
         width: '95%',
-        backgroundColor: 'black',
         height: '45px',
         borderRadius: '12px',
         paddingTop: '5px',
@@ -62,10 +54,10 @@ const styles = {
 }
 
 const mapStateToProps = (state) => ({
-    ...state.prodotoState
+    ...state.produtoState
 });
 
 export default connect(
     mapStateToProps,
-    Utils.bindMapDispatchToProps({})
+    Utils.bindMapDispatchToProps({ loadProdutos, setCategory })
 )(Categories);
