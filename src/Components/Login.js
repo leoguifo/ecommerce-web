@@ -5,7 +5,6 @@ import {
   Link,
 } from "react-router-dom";
 
-
 export default class Login extends React.Component {
 
     render() {
@@ -19,9 +18,7 @@ export default class Login extends React.Component {
                             </p>
                         </div>
                         <div className="col s8 center margin-5">
-                            <p>
-                                Aqui ficará a imagem
-                            </p>
+                            <img src="/Images/logo.png" />
                         </div>
                         <div className =" col s8 center">
                             <form>
@@ -59,6 +56,7 @@ const styles = {
         padding: '15px',
         height: '480px',
         verticalAlign: 'center',
+        color: 'white',
     },
     bot:{
         marginTop: '1rem',
