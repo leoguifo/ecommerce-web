@@ -31,9 +31,9 @@ export default class Login extends React.Component {
                             <label>
                                 <input placeholder="Senha" type="password" name="password" />
                             </label>
-                            <input className="waves-effect waves-light btn" type="submit" value="Enviar" />
+                            <input style={styles.send} className="waves-effect waves-light btn-small" type="submit" value="Enviar" />
                             </form>
-                            <div>
+                            <div style={styles.bot}>
                                 <a href="/Register">
                                     Cadastrar-se
                                 </a>
@@ -61,6 +61,13 @@ const styles = {
         verticalAlign: 'center',
     },
     bot:{
-        marginTop: '2rem',
+        marginTop: '1rem',
+    },
+    send:{
+        marginTop: '1rem',
+        width: '100%',
+        color: 'white',
+        backgroundColor: '#3f51b5',
+        borderRadius: '12px',
     },
 }

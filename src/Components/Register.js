@@ -27,7 +27,7 @@ class Register extends React.Component {
                                     </label>
                                 </div>
                                 <div style={styles.ula}>
-                                    <Link className="waves-effect waves-light btn-small " value="Enviar" onClick={ () => this.props.registerLogin({ email: window.$("emailR").val(), password: window.$("passR").val() }) } style={styles.cat} to="/Login">Enviar</Link>
+                                    <Link className="waves-effect waves-light btn-small" value="Enviar" onClick={ () => this.props.registerLogin({ email: window.$("emailR").val(), password: window.$("passR").val() }) } style={styles.cat} to="/Login">Enviar</Link>
                                  </div>
                             </form>
                             <p className="red-text"><b>{this.props.loginError}</b></p>
