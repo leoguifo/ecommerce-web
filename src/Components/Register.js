@@ -9,21 +9,25 @@ class Register extends React.Component {
     render() {
         return (
             <div className="col s12 white-text">
-                <div className="col-sm-12 col-lg-6 offset-l3" style={styles.aligns}>
+                <div className="col-sm-12 col-lg-7 offset-l3" style={styles.aligns}>
                     <div className="lighten-5 z-depth-4 " style={styles.top}>
                         <div>
                             <p className="center flow-text">
-                                <h5>REGISTRO</h5>
+                                <h5>Cadastre-se</h5>
                             </p>
                             <form>
                                 <div style={styles.prin} >
                                     <label>
-                                        E-mail:
-                                    <input id="emailR" type="text" name="email" className="white-text" />
+                                        <input placeholder="Usuario" type="text" name="name" />
                                     </label>
                                     <label>
-                                        Senha:
-                                    <input id="passR" type="password" name="password" className="white-text" />
+                                        <input placeholder="Senha" type="password" name="password" />
+                                    </label>
+                                    <label>
+                                        <input placeholder="Confirmar Senha" type="password" name="password" />
+                                    </label>
+                                    <label>
+                                        <input placeholder="E-mail" type="text" name="name" />
                                     </label>
                                 </div>
                                 <div style={styles.ula}>
@@ -52,7 +56,6 @@ const styles = {
     top: {
         marginTop: '12px',
         padding: '15px',
-        height: '300px',
         verticalAlign: 'center',
     },
     prin: {
@@ -63,12 +66,13 @@ const styles = {
         margin: '2px',
         width: '95%',
         backgroundColor: '#3f51b5',
-        height: '45px',
         borderRadius: '12px',
+
     },
     ula:{
         textAlign: '-webkit-center',
         marginBottom: 36,
+        marginTop: '1rem',
     },
 
 }

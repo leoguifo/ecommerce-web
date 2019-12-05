@@ -25,13 +25,13 @@ export default class Login extends React.Component {
                         </div>
                         <div className =" col s8 center">
                             <form>
-                            <label>
-                                <input placeholder="E-mail" type="text" name="name" />
-                            </label>
-                            <label>
-                                <input placeholder="Senha" type="password" name="password" />
-                            </label>
-                            <input style={styles.send} className="waves-effect waves-light btn-small" type="submit" value="Enviar" />
+                                <label>
+                                    <input placeholder="E-mail" type="text" name="name" />
+                                </label>
+                                <label>
+                                    <input placeholder="Senha" type="password" name="password" />
+                                </label>
+                                <input style={styles.send} className="waves-effect waves-light btn-small" type="submit" value="Enviar" />
                             </form>
                             <div style={styles.bot}>
                                 <a href="/Register">
