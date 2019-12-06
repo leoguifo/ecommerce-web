@@ -81,7 +81,7 @@ class Cart extends React.Component {
                                 }
                                 </div>
                                 <h5>Itens no carrinho: <span>{this.props.itensCounter}</span></h5>
-                                <span style={styles.text}> <i class="material-icons">attach_money</i>R$ {this.props.total}</span>
+                                <span style={styles.text}><i class="material-icons">VALOR TOTAL</i>R$ {this.props.total}</span>
                                 <div style={styles.div}>
                                     <a class="waves-effect waves-light btn-small" style={styles.cat}  href="#modalCart"><i class="material-icons left">attach_money</i>Finalizar</a>
                                 </div>

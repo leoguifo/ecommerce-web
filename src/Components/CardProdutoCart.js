@@ -7,7 +7,7 @@ class CardProdutoCart extends React.Component {
     render() {
         return (
             <div className="row">
-                <div className="col s11">
+                <div className="col s12">
                     <div className="card small grey darken-3">
                         <div className="card-image white-text">
                             <img alt="" src={this.props.produto.imagem} />
