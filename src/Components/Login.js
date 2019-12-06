@@ -27,6 +27,17 @@ export default class Login extends React.Component {
                 console.log(usuario);
             })
             .catch((err) => {
+                if (err.code === "auth/invalid-email") {
+                    window.M.toast({ html: 'Email inválido!' });
+                }
+
+                if (err.code === "auth/wrong-password") {
+                    window.M.toast({ html: 'Senha inválida!' });
+                }
+
+                if (err.code === "auth/user-not-found") {
+                    window.M.toast({ html: 'Usuário não encontrado!' });
+                }
                 console.error(err);
             });
     }
