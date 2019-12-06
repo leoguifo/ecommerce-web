@@ -63,7 +63,7 @@ class Cart extends React.Component {
                 
                 <div className="col s12 m8 offset-m2 l6 offset-l3" style={styles.aligns}>
                     <div className="card-panel grey lighten-5 z-depth-3">
-                        <div className="row valign-wrapper">
+                        
                             <div class="black-text">
                                 <div>
                                 {
@@ -77,19 +77,16 @@ class Cart extends React.Component {
                                             );
                                         })
                                         :
-                                        <h1>Não há itens</h1>
+                                        <h5 className="center" >Não há itens</h5>
                                 }
                                 </div>
-                                <h5>Itens no carrinho: {this.props.itensCounter}</h5>
+                                <h5>Itens no carrinho: <span>{this.props.itensCounter}</span></h5>
                                 <span style={styles.text}> <i class="material-icons">attach_money</i>R$ {this.props.total}</span>
-                                <div>
-                                <a class="waves-effect btn-small navigation in-post w-100" href="#modalCart"><i class="material-icons left">attach_money</i>Finalizar</a>
+                                <div style={styles.div}>
+                                    <a class="waves-effect waves-light btn-small" style={styles.cat}  href="#modalCart"><i class="material-icons left">attach_money</i>Finalizar</a>
                                 </div>
                             </div>
-                            <div class="row center">
-                               
-                            </div> 
-                        </div>
+                        
                     </div>
                 </div>
                 
@@ -215,6 +212,20 @@ const styles = {
     },
     text:{
         fontSize: 'x-large',
+    },
+    cat:{
+        width: '75%',
+        backgroundColor: '#3f51b5',
+        borderRadius: '12px',
+        paddingTop: '5px',
+        paddingBottom: '5px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        justifySelf: 'center'
+    },
+    div:{
+        display: 'grid',
     },
 };
 
