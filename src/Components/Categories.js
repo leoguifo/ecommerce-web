@@ -23,7 +23,7 @@ class Categories extends React.Component {
                         })}
                     </ul>
                     <div style={styles.ula}>
-                        <Link className="waves-effect waves-light btn-small " style={styles.cat} to="/Home">Voltar</Link>
+                        <Link className="waves-effect waves-light btn-small " style={styles.cat} to="/">Voltar</Link>
                     </div>
                 </div>
             </div>

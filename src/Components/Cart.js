@@ -60,11 +60,11 @@ class Cart extends React.Component {
     render() {
         return (
             <>
-                
+
                 <div className="col s12 m8 offset-m2 l6 offset-l3" style={styles.aligns}>
                     <div className="card-panel z-depth-3" style={styles.card}>
-                            <div class="white-text">
-                                <div>
+                        <div class="white-text">
+                            <div>
                                 {
                                     this.props.itens.length > 0 ?
                                         this.props.itens.map((item, key) => {
@@ -78,22 +78,22 @@ class Cart extends React.Component {
                                         :
                                         <h5 className="center" >SEM PRODUTOS NO CARRINHO!</h5>
                                 }
-                                </div>
-                                <div style={styles.flex}>
-                                    <h5>ITENS NO CARRINHO:</h5>
-                                    <span style={styles.text}>{this.props.itensCounter}</span>
-                                </div>
-                                <div style={styles.flex}>
-                                    <i class="material-icons">VALOR TOTAL</i>
-                                    <span style={styles.text}>R$ {this.props.total}</span>
-                                </div>
-                                <div style={styles.div}>
-                                    <a class="waves-effect waves-light btn-small" style={styles.cat}  href="#modalCart"><i class="material-icons left">attach_money</i>Finalizar</a>
-                                </div>
                             </div>
+                            <div style={styles.flex}>
+                                <h5>ITENS NO CARRINHO:</h5>
+                                <span style={styles.text}>{this.props.itensCounter}</span>
+                            </div>
+                            <div style={styles.flex}>
+                                <i class="material-icons">VALOR TOTAL</i>
+                                <span style={styles.text}>R$ {this.props.total}</span>
+                            </div>
+                            <div style={styles.div}>
+                                <a class="waves-effect waves-light btn-small modal-trigger" style={styles.cat} href="#modalCart"><i class="material-icons left">attach_money</i>Finalizar</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
+
                 {/* Abaixo fica a finalização da compra */}
                 <div id="modalCart" class="modal modal-fixed-footer grey darken-3 white-text">
                     <div class="modal-content white-text">
@@ -190,6 +190,12 @@ class Cart extends React.Component {
                                 </p>
                             </div>
 
+                            <div className="finished white-text" style={{ marginTop: '20px' }}>
+                                <p>
+                                    Suas keys também serão enviadas para seu e-mail: {this.props.user.email}
+                                </p>
+                            </div>
+
                         </div>
 
                         <div class="modal-footer finished grey darken-3 white-text">
@@ -203,7 +209,8 @@ class Cart extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    ...state.cartState
+    ...state.cartState,
+    ...state.loginState
 });
 
 const styles = {
@@ -214,11 +221,11 @@ const styles = {
         marginTop: '1rem',
         color: '#3f51b5 !important',
     },
-    text:{
+    text: {
         fontSize: 'x-large',
         alignSelf: 'center',
     },
-    cat:{
+    cat: {
         width: '75%',
         backgroundColor: '#3f51b5',
         borderRadius: '12px',
@@ -230,14 +237,14 @@ const styles = {
         justifySelf: 'center',
         marginTop: '10px',
     },
-    div:{
+    div: {
         display: 'grid',
     },
-    flex:{
+    flex: {
         display: 'flex',
-        justifyContent: 'space-between',  
+        justifyContent: 'space-between',
     },
-    card:{
+    card: {
         backgroundColor: 'transparent',
     },
 };

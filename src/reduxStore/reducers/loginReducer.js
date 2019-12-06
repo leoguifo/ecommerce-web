@@ -1,9 +1,10 @@
 import update from 'immutability-helper';
-import { ON_LOGIN, SET_LOGGED } from '../actions/actionTypes';
+import { ON_LOGIN, SET_LOGGED, SET_USER } from '../actions/actionTypes';
 
 const initialState = {
     is_logged: false,
-    loginError: ""
+    loginError: "",
+    user: {}
 };
 
 export const loginReducer = (state = initialState, action) => {
@@ -20,6 +21,12 @@ export const loginReducer = (state = initialState, action) => {
         case SET_LOGGED:
             return update(state, {
                 is_logged: {
+                    $set: action.value
+                }
+            });
+        case SET_USER:
+            return update(state, {
+                user: {
                     $set: action.value
                 }
             });

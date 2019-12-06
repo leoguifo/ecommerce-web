@@ -1,4 +1,4 @@
-import { UPDATE_CART, ADD_ITEM_TO_CART, REMOVE_CART_ITEM, SET_LOADED_PRODUTOS, ON_LOAD_PRODUTOS, ON_LOGIN, SET_CATEGORY, SET_LOGGED } from './actionTypes';
+import { UPDATE_CART, ADD_ITEM_TO_CART, REMOVE_CART_ITEM, SET_LOADED_PRODUTOS, ON_LOAD_PRODUTOS, ON_LOGIN, SET_CATEGORY, SET_LOGGED, SET_USER } from './actionTypes';
 import Utils from '../../Utils';
 import firebase from '../../Firebase';
 
@@ -137,6 +137,14 @@ export const setCategory = value => {
 export const setLogged = value => {
     return({
         type: SET_LOGGED,
+        value
+    });
+}
+
+export const setUser = value => {
+    if(!value) value = {};
+    return({
+        type: SET_USER,
         value
     });
 }

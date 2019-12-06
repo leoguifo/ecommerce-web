@@ -14,7 +14,7 @@ import Cart from './Cart';
 import Utils from '../Utils';
 import Register from './Register';
 import Categories from './Categories';
-import { setLogged } from '../reduxStore/actions';
+import { setLogged, setUser } from '../reduxStore/actions';
 import firebase from '../Firebase';
 
 class App extends React.Component {
@@ -34,24 +34,24 @@ class App extends React.Component {
         let that = this;
 
         firebase.auth().onAuthStateChanged(function (user) {
-            that.setState({ user, userVerified: true })
-
+            that.setState({ user, userVerified: true });
+            that.props.setUser(user);
             window.$(document).ready(function () {
                 setTimeout(() => {
                     window.$('.sidenav').sidenav();
                 }, 500);
             });
         });
-        
+
         let interval = setInterval(() => {
-           that.props.setLogged(that.state.user);
+            that.props.setLogged(that.state.user);
         }, 100);
 
         this.setState({ interval });
     }
 
     componentWillUnmount() {
-        if(this.state.interval) clearInterval(this.state.interval);
+        if (this.state.interval) clearInterval(this.state.interval);
     }
 
     closeSideNav() {
@@ -59,9 +59,9 @@ class App extends React.Component {
     }
 
     logOut() {
-        firebase.auth().signOut().then(function() {
+        firebase.auth().signOut().then(function () {
             window.location.href = '/';
-        }).catch(function(error) {
+        }).catch(function (error) {
             alert(JSON.stringfy(error))
         });
     }
@@ -69,12 +69,20 @@ class App extends React.Component {
     render() {
 
         if (!this.state.userVerified) return (
-            <div className="progress">
-                <div className="indeterminate"></div>
-            </div>
+            <>
+                <div className="indigo mobileStatusBar" style={{ width: "100%" }}></div>
+                <div className="progress">
+                    <div className="indeterminate"></div>
+                </div>
+            </>
         );
 
-        if (!this.props.is_logged) return (<Login />);
+        if (!this.props.is_logged) return (
+            <>
+                <div className="indigo mobileStatusBar" style={{ width: "100%" }}></div>
+                <Login />
+            </>
+        );
 
         return (
             <Router>
@@ -124,5 +132,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
     mapStateToProps,
-    Utils.bindMapDispatchToProps({ setLogged })
+    Utils.bindMapDispatchToProps({ setLogged, setUser })
 )(App)
