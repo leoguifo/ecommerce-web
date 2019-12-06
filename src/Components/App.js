@@ -31,6 +31,8 @@ class App extends React.Component {
 
     componentDidMount() {
 
+        Utils.showPopUp();
+        
         let that = this;
 
         firebase.auth().onAuthStateChanged(function (user) {
@@ -56,6 +58,14 @@ class App extends React.Component {
 
     closeSideNav() {
         window.$('.sidenav').sidenav('close')
+    }
+
+    logOut() {
+        firebase.auth().signOut().then(function() {
+            window.location.href = '/';
+        }).catch(function(error) {
+            alert(JSON.stringfy(error))
+        });
     }
 
     render() {
@@ -85,6 +95,7 @@ class App extends React.Component {
                         <li><Link to="/Categories" onClick={this.closeSideNav}>Categories</Link></li>
                         <li><Link to="/MyAccount" onClick={this.closeSideNav}>My Account</Link></li>
                         <li><Link to="/Cart" onClick={this.closeSideNav}>Cart ({this.props.itensOnCart})</Link></li>
+                        <li><a onClick={this.logOut}>Logout</a></li>
                     </ul>
 
                     {/* A <Switch> looks through its children <Route>s and

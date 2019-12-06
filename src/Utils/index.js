@@ -6,6 +6,9 @@ let Utils = {
     },
     toast: (msg) => {
         window.M.toast({ classes: "rounded", html: msg })
+    },
+    showPopUp: () => {
+        window.$('#modalPopUp').modal().modal('open')
     }
 }
 
