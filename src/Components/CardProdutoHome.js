@@ -50,7 +50,7 @@ class CardProdutoHome extends React.Component {
                         <h4>{this.props.produto.nome}</h4>
                         <p><b>Descrição: </b>{this.props.produto.descricao}</p>
                         <p><b>Preço: </b>R$ {this.props.produto.preco}</p>
-                        <p><b>Plataformas: </b>Windows / Xbox</p>
+                        <p><b>Plataformas: </b>PC / Console</p>
                     </div>
                     <div className="modal-footer grey darken-4">
                         <a href="#!" className="modal-close waves-effect waves-green btn-flat white-text">Fechar</a>
