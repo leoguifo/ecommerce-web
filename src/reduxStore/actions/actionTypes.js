@@ -6,3 +6,4 @@ export const ON_LOAD_PRODUTOS = 'ON_LOAD_PRODUTOS';
 export const REGISTER_LOGIN = 'REGISTER_LOGIN';
 export const ON_LOGIN = 'ON_LOGIN';
 export const SET_CATEGORY = 'SET_CATEGORY';
+export const SET_LOGGED = 'SET_LOGGED';

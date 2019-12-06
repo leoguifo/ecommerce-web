@@ -36,7 +36,10 @@ class Register extends React.Component {
                 usuario.user.updateProfile({
                     displayName: that.state.nome
                 });
-                console.log(usuario);
+                window.M.toast({ html: 'Usuario cadastrado! Redirecionando' });
+                setTimeout(() => {
+                    window.location.href = '/';
+                }, 500);
             }).catch((err) => {
                 if (err.code === "auth/invalid-email") {
                     window.M.toast({ html: 'Email inválido!' });
@@ -68,7 +71,7 @@ class Register extends React.Component {
                                         <input placeholder="Usuario" type="text" value={this.state.nome} onChange={(e) => this.setState({ nome: e.target.value })} />
                                     </label>
                                     <label>
-                                        <input placeholder="Senha" type="password" value={this.state.senha} onChange={(e) => this.setState({ senha: e.target.value })}/>
+                                        <input placeholder="Senha" type="password" value={this.state.senha} onChange={(e) => this.setState({ senha: e.target.value })} />
                                     </label>
                                     <label>
                                         <input placeholder="Confirmar Senha" type="password" value={this.state.senhaConfirmar} onChange={(e) => this.setState({ senhaConfirmar: e.target.value })} />
@@ -79,7 +82,7 @@ class Register extends React.Component {
                                 </div>
                                 <div style={styles.ula}>
                                     <button type="button" className="waves-effect waves-light btn-small" onClick={this.register} style={styles.cat} to="/Login">Enviar</button>
-                                 </div>
+                                </div>
                             </form>
                             <p className="red-text"><b>{this.props.loginError}</b></p>
                         </div>
@@ -109,14 +112,14 @@ const styles = {
         width: '100%',
 
     },
-    cat:{
+    cat: {
         margin: '2px',
         width: '95%',
         backgroundColor: '#3f51b5',
         borderRadius: '12px',
 
     },
-    ula:{
+    ula: {
         textAlign: '-webkit-center',
         marginBottom: 36,
         marginTop: '1rem',
