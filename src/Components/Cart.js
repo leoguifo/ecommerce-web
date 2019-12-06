@@ -62,9 +62,8 @@ class Cart extends React.Component {
             <>
                 
                 <div className="col s12 m8 offset-m2 l6 offset-l3" style={styles.aligns}>
-                    <div className="card-panel grey lighten-5 z-depth-3">
-                        
-                            <div class="black-text">
+                    <div className="card-panel z-depth-3" style={styles.card}>
+                            <div class="white-text">
                                 <div>
                                 {
                                     this.props.itens.length > 0 ?
@@ -77,16 +76,21 @@ class Cart extends React.Component {
                                             );
                                         })
                                         :
-                                        <h5 className="center" >Não há itens</h5>
+                                        <h5 className="center" >SEM PRODUTOS NO CARRINHO!</h5>
                                 }
                                 </div>
-                                <h5>Itens no carrinho: <span>{this.props.itensCounter}</span></h5>
-                                <span style={styles.text}><i class="material-icons">VALOR TOTAL</i>R$ {this.props.total}</span>
+                                <div style={styles.flex}>
+                                    <h5>ITENS NO CARRINHO:</h5>
+                                    <span style={styles.text}>{this.props.itensCounter}</span>
+                                </div>
+                                <div style={styles.flex}>
+                                    <i class="material-icons">VALOR TOTAL</i>
+                                    <span style={styles.text}>R$ {this.props.total}</span>
+                                </div>
                                 <div style={styles.div}>
                                     <a class="waves-effect waves-light btn-small" style={styles.cat}  href="#modalCart"><i class="material-icons left">attach_money</i>Finalizar</a>
                                 </div>
                             </div>
-                        
                     </div>
                 </div>
                 
@@ -212,6 +216,7 @@ const styles = {
     },
     text:{
         fontSize: 'x-large',
+        alignSelf: 'center',
     },
     cat:{
         width: '75%',
@@ -222,10 +227,18 @@ const styles = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        justifySelf: 'center'
+        justifySelf: 'center',
+        marginTop: '10px',
     },
     div:{
         display: 'grid',
+    },
+    flex:{
+        display: 'flex',
+        justifyContent: 'space-between',  
+    },
+    card:{
+        backgroundColor: 'transparent',
     },
 };
 

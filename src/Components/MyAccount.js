@@ -11,12 +11,12 @@ export default class MyAccount extends React.Component {
         return (
             <div>
                 <div className="col s12 m8 offset-m2 l6 offset-l3" style={styles.aligns}>
-                    <div className="card-panel grey lighten-5 z-depth-3">
+                    <div className="card-panel z-depth-3" style={styles.card}>
                         <div className="row valign-wrapper">
                             <div className="col s10">
-                                <span className="black-text">
-                                    This is a square image. Add the "circle" class to it to make it appear circular.
-                        </span>
+                                <h5 className="white-text">
+                                    ÚSUARIO
+                                </h5>
                             </div>
                             <div className="col s2">
                                 <img src="" alt="" className="circle responsive-img"></img>
@@ -25,12 +25,12 @@ export default class MyAccount extends React.Component {
                     </div>
                 </div>
                 <div className="col s12 m8 center">
-                    <div className="card-panel grey lighten-5 z-depth-3" style={styles.user}>
+                    <div className="card-panel z-depth-3" style={styles.user}>
                         <div style={styles.collection} >
                             <ul>
                                 <li className="collection">
                                     <a style={styles.fonts}>
-                                        usuario@hotmail.com
+                                        usuario@gmail.com
                                     </a>
                                 </li>
                                 <li className="collection">
@@ -43,7 +43,7 @@ export default class MyAccount extends React.Component {
                     </div>
                 </div>
                 <div className="col s12 m8 center">
-                    <div className="card-panel grey lighten-5 z-depth-3" style={styles.user}>
+                    <div className="card-panel z-depth-3" style={styles.user}>
                         <div style={styles.collection}>
                             <ul>
                                 <li className="collection">
@@ -72,14 +72,14 @@ export default class MyAccount extends React.Component {
                     </div>
                 </div>
                 <div className="col s12 m8 center">
-                    <div className="card-panel grey lighten-5 z-depth-3" style={styles.user}>
+                    <div className="card-panel z-depth-3" style={styles.user}>
                         <div style={styles.collection}>
                             <a className="waves-effect btn-small navigation in-post w-100" style={styles.btt}>Editar meus dados cadastrais</a>
                         </div>
                     </div>
                 </div>
                 <div className="col s12 m8 center">
-                    <div className="card-panel grey lighten-5 z-depth-3" style={styles.user}>
+                    <div className="card-panel z-depth-3" style={styles.user}>
                         <div style={styles.collection}>
                             <Link className="waves-effect btn-small navigation in-post w-100" style={styles.btt} to="/Home">Voltar</Link>
                         </div>
@@ -102,7 +102,7 @@ const styles = {
         margin: 'auto',
         marginTop: '1.5rem',
         padding: '10px',
-        backgroundColor: '#3f51b5',
+        backgroundColor: 'transparent',
     },
     collection: {
         margin: '5px',
@@ -110,7 +110,7 @@ const styles = {
         alignitems: 'stretch',
     },
     fonts: {
-        color: '#000',
+        color: 'white',
     },
     btt: {
         width: '100%',
@@ -122,4 +122,8 @@ const styles = {
         display: 'flex',
         justifyContent: 'space-evenly',
     },
+    card:{
+        backgroundColor: 'transparent',
+    }
+
 }
