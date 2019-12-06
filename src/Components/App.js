@@ -45,7 +45,7 @@ class App extends React.Component {
             <li><Link to="/Categories" onClick={this.closeSideNav}>Categories</Link></li>
             <li><Link to="/Login" onClick={this.closeSideNav}>Login</Link></li>
             <li><Link to="/Register" onClick={this.closeSideNav}>Register</Link></li>
-            <li><Link to="/MyAccount" onClick={this.closeSideNav}>Minha Conta</Link></li>
+            <li><Link to="/MyAccount" onClick={this.closeSideNav}>My Account</Link></li>
             <li><Link to="/Cart" onClick={this.closeSideNav}>Cart ({this.props.itensOnCart})</Link></li>
           </ul>
 
