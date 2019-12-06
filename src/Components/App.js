@@ -31,8 +31,6 @@ class App extends React.Component {
 
     componentDidMount() {
 
-        Utils.showPopUp();
-        
         let that = this;
 
         firebase.auth().onAuthStateChanged(function (user) {
