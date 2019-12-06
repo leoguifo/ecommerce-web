@@ -31,7 +31,7 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          <div className="indigo" id="mobileStatusBar" style={{ width: "100%" }}></div>
+          <div className="indigo mobileStatusBar" style={{ width: "100%" }}></div>
           <nav className="indigo" style={{zIndex: "2"}}>
             <div className="nav-wrapper">
               <a data-target="mobile-demo" className="sidenav-trigger" style={{ cursor: "pointer", display: "block" }}><i className="material-icons">menu</i></a>
@@ -40,6 +40,7 @@ class App extends React.Component {
           </nav>
 
           <ul className="sidenav" id="mobile-demo">
+          <div class="mobileStatusBar" style={{ width: "100%" }}></div>
             <li><Link to="/" onClick={this.closeSideNav}>Inicio</Link></li>
             <li><Link to="/Categories" onClick={this.closeSideNav}>Categories</Link></li>
             <li><Link to="/Login" onClick={this.closeSideNav}>Login</Link></li>

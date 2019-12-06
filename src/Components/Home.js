@@ -9,6 +9,9 @@ class Home extends React.Component {
     componentDidMount() {
         this.props.setLoadProduto(true);
         this.props.loadProdutos();
+        setTimeout(() => {
+            window.$(`.modal`).modal();
+        }, 1000)
     }
 
     initCarousel = () => {
@@ -25,6 +28,8 @@ class Home extends React.Component {
 
     render() {
 
+        let listModalRender = [];
+
         if (this.props.onLoad) return (
             <div className="progress">
                 <div className="indeterminate"></div>
@@ -39,10 +44,29 @@ class Home extends React.Component {
                             this.props.produtos.slice(0, 5)
                                 .filter(this.filterItensByCategory)
                                 .map((item, key) => {
+
+                                    listModalRender.push(
+                                        <div id={"modalCar" + key} className="modal grey darken-3">
+                                            <div className="modal-content white-text">
+                                                <img alt="" src={item.imagem} width="100%" />
+                                                <h4>{item.nome}</h4>
+                                                <p><b>Descrição: </b>{item.descricao}</p>
+                                                <p><b>Preço: </b>R$ {item.preco}</p>
+                                                <p><b>Plataformas: </b>Windows / Xbox</p>
+                                            </div>
+                                            <div className="modal-footer grey darken-4">
+                                                <a href="#!" className="modal-close waves-effect waves-green btn-flat white-text">Fechar</a>
+                                                <a href="#!" className="modal-close waves-effect waves-green btn-flat white-text" onClick={() => this.props.addItemToCart(item)}>Adicionar</a>
+                                            </div>
+                                        </div>
+                                    );
+
                                     return (
-                                        <a className="carousel-item" key={key} style={styles.sliderA}>
-                                            <img alt="" src={item.imagem} style={styles.sliderImg} />
-                                        </a>
+                                        <>
+                                            <a className="carousel-item modal-trigger" href={"#modalCar" + key} key={key} style={styles.sliderA}>
+                                                <img alt="" src={item.imagem} style={styles.sliderImg} />
+                                            </a>
+                                        </>
                                     );
                                 })
                         }
@@ -64,6 +88,12 @@ class Home extends React.Component {
                             })
                     }
                 </div>
+
+                {
+                    listModalRender.map((item) => {
+                        return(item);
+                    })
+                }
 
             </>
         )

@@ -126,7 +126,7 @@ class Cart extends React.Component {
                                 <select class="white-text">
                                     <option value="2">Boleto</option>
                                     <option value="3">Saldo em conta: R$ 20,00</option>
-                                    <option value="1">Cartão: xxxx xxxx xxxx 1234</option>
+                                    <option value="1">Cartão: xxxx xxxx xxxx 5438</option>
                                 </select>
                                 <label class="white-text">Método de pagamento</label>
                             </div>
