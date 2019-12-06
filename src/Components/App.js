@@ -31,7 +31,9 @@ class App extends React.Component {
 
     componentDidMount() {
         window.$(document).ready(function () {
-            window.$('.sidenav').sidenav();
+            setTimeout(() => {
+                window.$('.sidenav').sidenav();
+            }, 1000)
         });
 
         let that = this;
