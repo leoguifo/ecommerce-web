@@ -30,16 +30,18 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        window.$(document).ready(function () {
-            setTimeout(() => {
-                window.$('.sidenav').sidenav();
-            }, 1000)
-        });
 
         let that = this;
 
         firebase.auth().onAuthStateChanged(function (user) {
             that.setState({ user, userVerified: true })
+
+            window.$(document).ready(function () {
+            setTimeout(() => {
+                window.$('.sidenav').sidenav();
+            }, 500);
+
+        });
         });
         
         let interval = setInterval(() => {
