@@ -1,7 +1,7 @@
 import React from 'react';
 import CardProdutoHome from './CardProdutoHome';
 import { connect } from 'react-redux';
-import { loadProdutos, setLoadProduto } from '../reduxStore/actions';
+import { loadProdutos, setLoadProduto, addItemToCart } from '../reduxStore/actions';
 import Utils from '../Utils';
 
 class Home extends React.Component {
@@ -132,5 +132,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
     mapStateToProps,
-    Utils.bindMapDispatchToProps({ loadProdutos, setLoadProduto })
+    Utils.bindMapDispatchToProps({ loadProdutos, setLoadProduto, addItemToCart })
 )(Home)
